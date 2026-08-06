@@ -61,6 +61,7 @@ function App() {
 					<ScrollToTop />
 					<Navbar />
 					<SessionHandler />
+					<Analytics />
 					{/* <Home /> */}
 					<Routes>
 						{/* <Route exact path="/" element={<Home />} /> */}
