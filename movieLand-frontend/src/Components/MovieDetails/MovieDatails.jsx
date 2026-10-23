@@ -5,12 +5,15 @@ import noMovie from "../../assets/no-movie.png";
 import profileLogo from "../../assets/no-profile-pic.jpeg";
 import movieContext from "../../context/movieContext";
 import Loading from "../Loader/Loading";
+import PhotosGalleryModal from "./PhotosGalleryModal";
 
 function MovieDetails() {
 	const navigate = useNavigate();
 	const [reviewIndex, setReviewIndex] = useState(0);
 	const [activeReview, setActiveReview] = useState(null);
 	const [showLoginModal, setShowLoginModal] = useState(false);
+	const [isPhotoModalOpen, setIsPhotoModalOpen] = useState(false);
+	const [photoModalIndex, setPhotoModalIndex] = useState(0);
 
 	const getAvatarUrl = (avatarPath) => {
 		if (!avatarPath) return null;
@@ -404,15 +407,71 @@ function MovieDetails() {
 					</div>
 
 					<div className="photos-grid">
-						{movieImages.slice(0, 8).map((img, index) => (
-							<img
-								key={index}
-								src={`https://image.tmdb.org/t/p/w780${img.file_path}`}
-								alt="movie scene"
-							/>
-						))}
+						{movieImages.length <= 8
+							? movieImages.map((img, index) => (
+									<div
+										key={index}
+										className="photo-card-wrapper"
+										onClick={() => {
+											setPhotoModalIndex(index);
+											setIsPhotoModalOpen(true);
+										}}
+									>
+										<img
+											src={`https://image.tmdb.org/t/p/w780${img.file_path}`}
+											alt="movie scene"
+										/>
+									</div>
+							  ))
+							: (
+									<>
+										{movieImages.slice(0, 7).map((img, index) => (
+											<div
+												key={index}
+												className="photo-card-wrapper"
+												onClick={() => {
+													setPhotoModalIndex(index);
+													setIsPhotoModalOpen(true);
+												}}
+											>
+												<img
+													src={`https://image.tmdb.org/t/p/w780${img.file_path}`}
+													alt="movie scene"
+												/>
+											</div>
+										))}
+										<div
+											className="photo-more-card"
+											onClick={() => {
+												setPhotoModalIndex(7);
+												setIsPhotoModalOpen(true);
+											}}
+										>
+											<img
+												src={`https://image.tmdb.org/t/p/w780${movieImages[7].file_path}`}
+												alt="see more scene"
+											/>
+											<div className="photo-more-overlay">
+												<span className="photo-more-count">
+													+{movieImages.length - 7}
+												</span>
+												<span className="photo-more-text">
+													See More <i className="fa-solid fa-arrow-right"></i>
+												</span>
+											</div>
+										</div>
+									</>
+							  )}
 					</div>
 				</div>
+
+				{/* PHOTO GALLERY MODAL */}
+				<PhotosGalleryModal
+					isOpen={isPhotoModalOpen}
+					onClose={() => setIsPhotoModalOpen(false)}
+					images={movieImages}
+					initialIndex={photoModalIndex}
+				/>
 				{/* reviews */}
 				<div className="featured-reviews">
 					<div className="center">

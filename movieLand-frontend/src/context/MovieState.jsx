@@ -705,7 +705,10 @@ function MovieState(props) {
 	};
 
 	const fetchPersonDetails = async (id) => {
-		const response = await fetch(`${host}/person/${id}`, options);
+		const response = await fetch(
+			`${host}/person/${id}?query=performer_name&include_adult=true`,
+			options,
+		);
 		const data = await response.json();
 		setPersonDetails(data);
 		// console.log(data);
@@ -729,7 +732,7 @@ function MovieState(props) {
 		);
 		const data = await response.json();
 		setPersonMovieCredits(data);
-		console.log(data);
+		// console.log(data);
 	};
 
 	const fetchPersonTVCredits = async (id) => {
