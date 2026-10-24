@@ -17,8 +17,8 @@
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	background: radial-gradient(circle at 50% 30%, rgba(255, 183, 3, 0.16) 0%, transparent 60%),
-	            radial-gradient(circle at 80% 80%, rgba(251, 133, 0, 0.08) 0%, transparent 50%),
+	background: radial-gradient(circle at 50% 30%, rgba(229, 9, 20, 0.18) 0%, transparent 65%),
+	            radial-gradient(circle at 80% 80%, rgba(184, 29, 36, 0.1) 0%, transparent 50%),
 	            var(--bg-primary);
 	overflow: hidden;
 }
@@ -76,13 +76,13 @@
 
 .primary-btn {
 	background: var(--theme-accent-gradient);
-	color: #1a1a1a;
-	box-shadow: 0 10px 25px rgba(251, 133, 0, 0.3);
+	color: #ffffff;
+	box-shadow: 0 10px 25px rgba(229, 9, 20, 0.4);
 }
 
 .primary-btn:hover {
 	transform: translateY(-3px);
-	box-shadow: 0 15px 35px rgba(251, 133, 0, 0.5);
+	box-shadow: 0 15px 35px rgba(229, 9, 20, 0.6);
 }
 
 .secondary-btn {

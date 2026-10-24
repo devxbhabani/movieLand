@@ -230,7 +230,7 @@ function EpisodeDetails() {
 						<h1 className="movie-detail-title">
 							<span onClick={() => handleBackShow()} style={{ cursor: "pointer" }}>{tvDetails.name}</span>
 							<span style={{ color: "rgba(255,255,255,0.4)", margin: "0 10px" }}>›</span>
-							<span onClick={() => handleBack()} style={{ cursor: "pointer", color: "var(--theme-accent, #ffb703)" }}>S{seasonNumber}</span>
+							<span onClick={() => handleBack()} style={{ cursor: "pointer", color: "var(--theme-accent, #E50914)" }}>S{seasonNumber}</span>
 							<span style={{ color: "rgba(255,255,255,0.4)", margin: "0 10px" }}>›</span>
 							<span style={{ color: "#f63049" }}>E{episodeNumber}</span>
 							<span style={{ color: "rgba(255,255,255,0.4)", margin: "0 15px" }}>:</span>
@@ -330,9 +330,9 @@ function EpisodeDetails() {
 												key={episode.id}
 												className={`genre-pill-tag ${isActive ? "active-episode-pill" : ""}`}
 												style={{
-													border: isActive ? "1px solid var(--theme-accent, #ffb703)" : "1px solid rgba(139, 92, 246, 0.3)",
-													background: isActive ? "rgba(255, 183, 3, 0.15)" : "transparent",
-													color: isActive ? "var(--theme-accent, #ffb703)" : "white"
+													border: isActive ? "1px solid var(--theme-accent, #E50914)" : "1px solid rgba(229, 9, 20, 0.3)",
+													background: isActive ? "rgba(229, 9, 20, 0.2)" : "transparent",
+													color: isActive ? "var(--theme-accent, #ffffff)" : "white"
 												}}
 												onClick={() =>
 													navigate(

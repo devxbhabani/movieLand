@@ -7,25 +7,25 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
-	/* Midnight Gold Theme Variables */
-	--bg-primary: #080c14;
-	--bg-secondary: #101726;
-	--bg-hover: #19243b;
+	/* Netflix Red & Black Theme Variables */
+	--bg-primary: #141414;
+	--bg-secondary: #000000;
+	--bg-hover: #1f1f1f;
 
-	--accent-primary: #ffb703;
-	--accent-secondary: #fb8500;
+	--accent-primary: #E50914;
+	--accent-secondary: #B81D24;
 
-	--text-primary: #f8fafc;
-	--text-secondary: #cbd5e1;
-	--text-muted: #64748b;
+	--text-primary: #ffffff;
+	--text-secondary: #e5e5e5;
+	--text-muted: #808080;
 
-	--danger: #ef4444;
-	--border: rgba(255, 255, 255, 0.08);
-	--shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+	--danger: #e50914;
+	--border: rgba(255, 255, 255, 0.12);
+	--shadow: 0 8px 32px rgba(0, 0, 0, 0.85);
 
 	/* Gradients */
-	--theme-bg-gradient: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-	--theme-accent-gradient: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+	--theme-bg-gradient: linear-gradient(180deg, #141414 0%, #000000 100%);
+	--theme-accent-gradient: linear-gradient(135deg, #E50914 0%, #B81D24 100%);
 
 	/* Unified Sizing System */
 	--card-width: 180px;
